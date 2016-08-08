@@ -1,0 +1,8 @@
+{
+  "name": "boxes",
+  "version": "0.0.1",
+  "author": "Jonas Oberschweiber <jonas@oberschweiber.com>",
+  "synopsis": "A pretty printer for boxes",
+  "dependencies": {},
+  "exportedModules": ["Boxes"]
+}
