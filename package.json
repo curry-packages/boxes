@@ -4,5 +4,9 @@
   "author": "Jonas Oberschweiber <jonas@oberschweiber.com>",
   "synopsis": "A pretty printer for boxes",
   "dependencies": {},
-  "exportedModules": ["Boxes"]
+  "exportedModules": ["Boxes"],
+  "source": {
+    "git": "ssh://git@git.ps.informatik.uni-kiel.de:55055/joo/boxes.git",
+    "tag": "$version"
+  }
 }
