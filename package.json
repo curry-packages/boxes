@@ -1,6 +1,6 @@
 {
   "name": "boxes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Jonas Oberschweiber <jonas@oberschweiber.com>",
   "synopsis": "A pretty printer for boxes",
   "dependencies": {},
