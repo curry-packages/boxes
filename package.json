@@ -6,7 +6,7 @@
   "dependencies": {},
   "exportedModules": ["Boxes"],
   "source": {
-    "git": "ssh://git@git.ps.informatik.uni-kiel.de:55055/joo/boxes.git",
+    "git": "https://git.ps.informatik.uni-kiel.de/curry-packages/boxes.git",
     "tag": "$version"
   }
 }
