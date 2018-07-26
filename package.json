@@ -1,6 +1,6 @@
 {
    "name": "boxes",
-   "version": "2.0.0",
+   "version": "3.0.0",
    "author": "Jonas Oberschweiber <jonas@oberschweiber.com>",
    "category": [ "Printing" ],
    "synopsis": "A pretty printer for boxes",
