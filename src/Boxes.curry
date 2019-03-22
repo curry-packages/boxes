@@ -101,7 +101,7 @@ hcat a bs = Box h w (Row $ map (alignVert a h) bs)
  where
   (w, h) = sumMax cols 0 rows bs
 
---- Combines a list of boxes horizontally with the given alignment and space
+--- Combines a list of boxes horizontally with the given alignment and space 
 --- between all boxes.
 hsep :: Int -> Alignment -> [Box] -> Box
 hsep sep a bs = punctuateH a (emptyBox 0 sep) bs
@@ -123,7 +123,7 @@ sumMax f defaultMax g as = foldr go (,) as 0 defaultMax
 vsep :: Int -> Alignment -> [Box] -> Box
 vsep sep a bs = punctuateV a (emptyBox sep 0) bs
 
---- Combine a list of boxes horizontally with the given alignment and a copy of
+--- Combine a list of boxes horizontally with the given alignment and a copy of 
 --- the given box between each two boxes.
 punctuateH :: Alignment -> Box -> [Box] -> Box
 punctuateH a p bs = hcat a (intersperse p bs)
@@ -148,7 +148,7 @@ mkParaBoxFill a h w = align AlignFirst a h w . vcat a . map text
 para :: Alignment -> Int -> String -> Box
 para a n t = (\ss -> mkParaBox a (length ss) ss) $ flow n t
 
---- Creates a list of boxes, each of a specific width and height. The given
+--- Creates a list of boxes, each of a specific width and height. The given 
 --- text is flowed into as many columns as necessary according to the given
 --- alignment.
 columns :: Alignment -> Int -> Int -> String -> [Box]
@@ -187,7 +187,7 @@ getLines (Para _ (Block ls l))
   where process = map (unwords . reverse . map getWord . getWords) . reverse
 
 --- A line has a length and a list of words.
-data Line = Line
+data Line = Line 
   { lLen :: Int
   , getWords :: [Word] }
 
@@ -232,7 +232,7 @@ alignHoriz a c b = align a AlignFirst (rows b) c b
 alignVert :: Alignment -> Int -> Box -> Box
 alignVert a r b = align AlignFirst a r (cols b) b
 
---- Creates a box of a specific width and height containing another box's
+--- Creates a box of a specific width and height containing another box's 
 --- content aligned according to the given alignment.
 align :: Alignment -> Alignment -> Int -> Int -> Box -> Box
 align ah av r c = Box r c . SubBox ah av
@@ -248,7 +248,7 @@ moveDown :: Int -> Box -> Box
 moveDown n b = alignVert bottom (rows b + n) b
 
 --- Move a box left by putting it into a larger box with extra columns, aligned
---- to the left. Note that this will only move the box by the specified amount
+--- to the left. Note that this will only move the box by the specified amount 
 --- if it is already in a larger right-aligned box.
 moveLeft :: Int -> Box -> Box
 moveLeft n b = alignHoriz left (cols b + n) b
@@ -269,10 +269,10 @@ table rows widths = vcat left $ map (hcat left . map (uncurry $ paraFill left)) 
 render :: Box -> String
 render = unlines . renderBox
 
---- Takes a number of elements from a list. If the list is shorter than that
+--- Takes a number of elements from a list. If the list is shorter than that 
 --- number, fill the rest with a filler.
 takeP :: a -> Int -> [a] -> [a]
-takeP b n xs
+takeP b n xs 
   | n <= 0 = []
   | otherwise = case xs of
     []     -> replicate n b
@@ -350,3 +350,4 @@ chunksOf n xs = map (take n) (xs:(partials xs))
 
 sum :: [Int] -> Int
 sum = foldl (+) 0
+
